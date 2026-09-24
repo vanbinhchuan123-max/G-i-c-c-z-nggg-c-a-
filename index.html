@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gửi Cục Zànggg 🌙</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            #7d2145 0%,
+            #350b25 45%,
+            #10030d 100%
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    overflow: hidden;
+
+    font-family: Georgia, serif;
+}
+
+
+/* =========================
+   THIỆP 4:3
+========================= */
+
+.card {
+
+    position: relative;
+
+    width: min(94vw, 960px);
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    border: 1px solid rgba(255,220,180,0.45);
+
+    box-shadow:
+        0 0 40px rgba(255,150,200,0.25),
+        0 20px 70px rgba(0,0,0,0.65);
+
+    background: #210817;
+}
+
+
+/* =========================
+   GIF
+========================= */
+
+.main-gif {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   ÁNH SÁNG LUNG LINH
+========================= */
+
+.glow {
+
+    position: absolute;
+
+    inset: -30%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,190,220,0.20),
+            transparent 45%
+        );
+
+    animation: glow 5s ease-in-out infinite;
+}
+
+
+@keyframes glow {
+
+    0%,
+    100% {
+
+        transform: scale(0.95);
+
+        opacity: 0.45;
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   TRÁI TIM BAY
+========================= */
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #ff9fc7;
+
+    font-size: 24px;
+
+    text-shadow:
+        0 0 8px #ff7eb5,
+        0 0 18px rgba(255,100,180,0.8),
+        0 0 30px rgba(255,100,180,0.5);
+
+    pointer-events: none;
+
+    animation-name: heartFloat;
+
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes heartFloat {
+
+    0% {
+
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(0.5)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translateY(-300px)
+            translateX(30px)
+            scale(1)
+            rotate(12deg);
+    }
+
+    100% {
+
+        transform:
+            translateY(-800px)
+            translateX(-40px)
+            scale(0.6)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   BLINK BLINK
+========================= */
+
+.sparkle {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    background: #fff5cc;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #fff5cc,
+        0 0 18px #ffd6ec,
+        0 0 30px rgba(255,180,220,0.7);
+
+    pointer-events: none;
+
+    animation: blink 1.6s ease-in-out infinite;
+}
+
+
+.sparkle::before,
+.sparkle::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: #fff8dc;
+}
+
+
+.sparkle::before {
+
+    width: 2px;
+
+    height: 25px;
+}
+
+
+.sparkle::after {
+
+    width: 25px;
+
+    height: 2px;
+}
+
+
+@keyframes blink {
+
+    0%,
+    100% {
+
+        opacity: 0.05;
+
+        transform: scale(0.3);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.6);
+    }
+}
+
+
+/* =========================
+   NÚT NHẠC
+========================= */
+
+.music {
+
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    z-index: 20;
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    background: rgba(45,5,28,0.65);
+
+    color: #ffe5ef;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.3);
+}
+
+
+.music:hover {
+
+    background: rgba(120,20,70,0.8);
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        width: 96vw;
+
+        border-radius: 20px;
+    }
+
+    .music {
+
+        right: 10px;
+
+        bottom: 10px;
+
+        font-size: 11px;
+
+        padding: 8px 12px;
+    }
+
+    .heart {
+
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <!-- =====================
+         GIF THIỆP
+    ====================== -->
+
+    <img
+        class="main-gif"
+        src="thiep.gif"
+        alt="Thiệp Trung Thu gửi Hoàng Mơ"
+    >
+
+
+    <!-- ÁNH SÁNG -->
+
+    <div class="glow"></div>
+
+
+    <!-- =====================
+         TRÁI TIM BAY
+    ====================== -->
+
+    <span
+        class="heart"
+        style="
+            left:5%;
+            animation-duration:7s;
+            animation-delay:0s;
+        "
+    >♥</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:17%;
+            animation-duration:9s;
+            animation-delay:2s;
+        "
+    >♥</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:29%;
+            animation-duration:8s;
+            animation-delay:1s;
+        "
+    >♡</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:42%;
+            animation-duration:10s;
+            animation-delay:4s;
+        "
+    >♥</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:55%;
+            animation-duration:7.5s;
+            animation-delay:1.5s;
+        "
+    >♡</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:68%;
+            animation-duration:9s;
+            animation-delay:3s;
+        "
+    >♥</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:81%;
+            animation-duration:8s;
+            animation-delay:0.5s;
+        "
+    >♡</span>
+
+
+    <span
+        class="heart"
+        style="
+            left:92%;
+            animation-duration:10s;
+            animation-delay:2.5s;
+        "
+    >♥</span>
+
+
+    <!-- =====================
+         BLINK BLINK
+    ====================== -->
+
+    <span
+        class="sparkle"
+        style="
+            left:10%;
+            top:13%;
+            animation-delay:0.2s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:23%;
+            top:27%;
+            animation-delay:1s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:38%;
+            top:11%;
+            animation-delay:0.5s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:52%;
+            top:20%;
+            animation-delay:1.3s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:67%;
+            top:12%;
+            animation-delay:0.7s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:82%;
+            top:32%;
+            animation-delay:1.7s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:16%;
+            top:65%;
+            animation-delay:1.1s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:73%;
+            top:70%;
+            animation-delay:0.3s;
+        "
+    ></span>
+
+
+    <span
+        class="sparkle"
+        style="
+            left:91%;
+            top:62%;
+            animation-delay:1.8s;
+        "
+    ></span>
+
+
+    <!-- =====================
+         NÚT NHẠC
+    ====================== -->
+
+    <button
+        class="music"
+        onclick="playMusic()"
+    >
+        🎵 Bấm để mở nhạc
+    </button>
+
+
+    <!--
+        Sau này upload music.mp3
+        vào cùng repository.
+    -->
+
+    <audio
+        id="music"
+        loop
+    >
+
+        <source
+            src="music.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+</div>
+
+
+<script>
+
+function playMusic() {
+
+    const music =
+        document.getElementById("music");
+
+
+    if (music.paused) {
+
+        music.play();
+
+    } else {
+
+        music.pause();
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
